@@ -10,7 +10,10 @@ import fs from 'fs';
 import { readFile } from 'fs/promises';
 import nodemailer from 'nodemailer';
 import cron from 'node-cron';
-import pdf from 'pdf-parse';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+const pdf = require('pdf-parse');
 
 dotenv.config();
 
